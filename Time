@@ -1,0 +1,47 @@
+
+#include <iostream>
+using namespace std;
+ 
+class Time
+{
+private:
+    int hours;
+    int minutes;
+    int seconds;
+ 
+public:
+    void getTime(void);
+    void convertIntoSeconds(void);
+    void displayTime(void);
+};
+ 
+void Time::getTime(void)
+{
+    cout << "Enter time:" << endl;
+    cout << "Hours? ";    cin>>hours;
+    cout << "Minutes? ";  cin>>minutes;
+    cout << "Seconds? ";  cin>>seconds;
+    cout<<"\n";
+}
+ 
+void Time::convertIntoSeconds(void)
+{ 
+     int Seconds = hours*3600 + minutes*60 + seconds; 
+     cout << "Time in total seconds: " << Seconds;
+}
+
+void Time::displayTime(void)
+{
+    cout << endl;
+    cout << "Time: ";
+    cout << hours << ":" << minutes << ":" << seconds << endl;
+}
+ 
+int main()
+{
+    Time T;
+    T.getTime();
+    T.displayTime();
+    T.convertIntoSeconds();
+    return 0;
+}
